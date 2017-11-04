@@ -11,6 +11,16 @@ namespace SuaveControls.MaterialForms
 {
     public partial class MaterialEntry : ContentView
     {
+        /// <summary>
+        /// Occures when the user finalizes the text in material entry with the return key.
+        /// </summary>
+        public EventHandler Completed
+        {
+            get { return null; }
+            set { this.EntryField.Completed += value; }
+        }
+        public static BindableProperty CompletedProperty = BindableProperty.Create("Completed", typeof(EventHandler), typeof(MaterialEntry), defaultBindingMode: BindingMode.TwoWay, propertyChanged: (bindable, oldValue, newValue) => { var matEntry = (MaterialEntry)bindable; matEntry.Completed = (EventHandler)newValue; });
+        
         public static BindableProperty TextProperty = BindableProperty.Create(nameof(Text), typeof(string), typeof(MaterialEntry), defaultBindingMode: BindingMode.TwoWay);
         public static BindableProperty PlaceholderProperty = BindableProperty.Create(nameof(Placeholder), typeof(string), typeof(MaterialEntry), defaultBindingMode: BindingMode.TwoWay, propertyChanged: (bindable, oldVal, newval) =>
         {
