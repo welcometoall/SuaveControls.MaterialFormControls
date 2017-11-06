@@ -12,7 +12,7 @@ namespace SuaveControls.MaterialForms
     public partial class MaterialEntry : ContentView
     {
         /// <summary>
-        /// Occures when the user finalizes the text in material entry with the return key.
+        /// Occurs when the user finalizes the text in material entry with the return key.
         /// </summary>
         public EventHandler Completed
         {
